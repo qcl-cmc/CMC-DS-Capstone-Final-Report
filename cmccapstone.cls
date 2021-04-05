@@ -46,10 +46,6 @@
 %%% when we use this class file for Statement of Work as well.
 
 \newif\ifshortdoc\shortdocfalse
-\DeclareOption{proposal}{%
-  \shortdoctrue
-  \AtEndOfClass{\def\@reporttype{Statement of Work}}%
-}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}%
     {\ifshortdoc report\else book \fi}}
 \ExecuteOptions{}
@@ -79,7 +75,6 @@
 \RequirePackage{xspace}
 \RequirePackage{verbatim}
 \RequirePackage{booktabs}         % Publication-quality tables.
-\RequirePackage{natbib}           % Better bibliography handling.
 \RequirePackage{ifthen}
 \RequirePackage{graphics}
 \RequirePackage[obeyspaces,spaces]{url}
@@ -120,17 +115,10 @@
 %%% Set URLs in sans-serif type.
 \AtBeginDocument{\urlstyle{sf}}
 
-%%% Set some defaults for bibliographic punctuation used by natbib.sty.
-\bibpunct[:~]{(}{)}{;}{a}{,}{,~} 
-
 
 %%% Define some environments.
-\ifshortdoc
-% No need to define abstract
-\else
 \newenvironment{abstract}{\chapter*{Abstract}%
 \addcontentsline{toc}{chapter}{Abstract}}{}
-\fi
 
 \newenvironment{acknowledgments}{\chapter*{Acknowledgments}%
 \addcontentsline{toc}{chapter}{Acknowledgments}}{}
@@ -306,8 +294,6 @@
 \def\@advisor{\@latex@warning@no@line{No \noexpand\advisor given}}
 \def\consultant#1{\gdef\@consultant{#1}}
 \def\reporttype#1{\gdef\@reporttype{#1}}
-%\def\@reporttype{\@latex@warning@no@line{No \noexpand\reporttype given}}
-%%% Default to Final Report
 \def\@reporttype{Final Report}
 
 

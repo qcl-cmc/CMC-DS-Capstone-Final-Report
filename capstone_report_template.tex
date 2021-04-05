@@ -64,8 +64,8 @@
 %%% pieces of other packages, so it's important that it be loaded
 %%% last.
 
-\usepackage{graphicx}           % More control over graphic inclusion.
-
+\usepackage{graphicx}   % More control over graphic inclusion.
+\usepackage{longtable} % For tables taking up more than one page     
 %%% !!! Load all other packages before this line !!!
 
 %%% (Optional) Load hyperref as the last package
@@ -104,7 +104,7 @@
 %%% So, some questions.
 
 %% What is the name of the company or organization sponsoring your project?
-\sponsor{Data R Us, LLC}
+\sponsor{Claremont Data Bank}
 
 %% What is the title of your report?
 \title{Making Data Work: A Novel Approach}
@@ -361,12 +361,8 @@ Thank some people and organizations here, if you like.
 %%% Note that bibliography-style files have .bst file extension.
 
 % Standard bibliography style.
-% Here we use HMC math bibliography-style file as an example.
-\bibliographystyle{hmcmath}
-
-% Annotated bibliography style.
-% \bibliographystyle{hmcmathannote}
-
+% Here we use acm bibliography-style as an example.
+\bibliographystyle{acm}
 
 %%% The particular bibliography data file or files that you want to
 %%% use are specified with the \bibliography file.  Multiple files are
@@ -402,9 +398,3 @@ Thank some people and organizations here, if you like.
 
 \end{document}
 
-
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
